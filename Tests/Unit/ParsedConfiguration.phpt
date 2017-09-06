@@ -13,7 +13,7 @@ require __DIR__ . '/../bootstrap.php';
 
 class ParsedConfiguration extends \Tester\TestCase {
 
-	public function testReturningValidSectionAndSettings() {
+	public function testReturningValidSettings() {
 		Assert::same(
 			[
 				'Example' => [
@@ -28,7 +28,7 @@ class ParsedConfiguration extends \Tester\TestCase {
 		);
 	}
 
-	public function testReturningInvalidIniFile() {
+	public function testReturningSettingsInInvalidFile() {
 		Assert::exception(
 			function () {
 				(new Configuration\ParsedConfiguration(
