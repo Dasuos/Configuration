@@ -1,0 +1,6 @@
+vendor
+example.ini
+example.php
+composer.lock
+*.actual
+*.expected

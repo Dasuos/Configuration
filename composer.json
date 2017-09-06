@@ -1,0 +1,42 @@
+{
+  "name": "dasuos/ini",
+  "description": "Library for .ini file manipulation",
+  "type": "library",
+  "homepage": "https://github.com/Dasuos/Ini",
+  "keywords": [
+    "ini"
+  ],
+  "authors": [
+    {
+      "name": "Daniel Krnak",
+      "email": "dasuos256@gmail.com",
+      "homepage": "https://www.github.com/Dasuos",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "require-dev": {
+    "nette/tester": "^1.7",
+    "jakub-onderka/php-parallel-lint": "^0.9.2",
+    "phpstan/phpstan": "^0.8.4",
+    "slevomat/coding-standard": "^3.3",
+    "consistence/coding-standard": "^2.0",
+    "phing/phing": "^2.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dasuos\\Configuration\\": [
+        "Core/"
+      ]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dasuos\\Configuration\\": [
+        "Tests/"
+      ]
+    }
+  }
+}
