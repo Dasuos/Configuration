@@ -4,6 +4,8 @@ namespace Dasuos\Configuration;
 
 final class ParsedConfiguration implements Configuration {
 
+	private const WITH_SECTIONS = true;
+
 	private $path;
 
 	public function __construct(string $path) {
@@ -15,7 +17,11 @@ final class ParsedConfiguration implements Configuration {
 			throw new \UnexpectedValueException(
 				'Given file is not readable or does not have .ini extension'
 			);
-		return parse_ini_file($this->path, true);
+		return parse_ini_file(
+			$this->path,
+			self::WITH_SECTIONS,
+			INI_SCANNER_TYPED
+		);
 	}
 
 	private function valid(string $path): bool {

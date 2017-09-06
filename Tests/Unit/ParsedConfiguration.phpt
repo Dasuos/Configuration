@@ -19,7 +19,7 @@ class ParsedConfiguration extends \Tester\TestCase {
 				'Example' => [
 					'example' => 'foo',
 					'example2' => 'bar',
-					'example3' => '12345'
+					'example3' => 12345
 				]
 			],
 			(new Configuration\ParsedConfiguration(
