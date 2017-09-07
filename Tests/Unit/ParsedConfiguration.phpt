@@ -19,20 +19,44 @@ class ParsedConfiguration extends \Tester\TestCase {
 				'Example' => [
 					'example' => 'foo',
 					'example2' => 'bar',
-					'example3' => 12345
-				]
+					'example3' => 12345,
+				],
 			],
 			(new Configuration\ParsedConfiguration(
-			__DIR__ . '/../TestCase/ParsedConfiguration/configuration.ini'
+				__DIR__ . '/../TestCase/configuration.ini'
 			))->settings()
 		);
 	}
 
-	public function testReturningSettingsInInvalidFile() {
+	public function testReturningSettingsFromCorruptedConfiguration() {
 		Assert::exception(
 			function () {
 				(new Configuration\ParsedConfiguration(
-					__DIR__ . '/nonexistent/path/to/ini/file'
+					__DIR__ . '/../TestCase/corruptedConfiguration.ini'
+				))->settings();
+			},
+			\UnexpectedValueException::class,
+			'Given file is not readable or does not have .ini extension'
+		);
+	}
+
+	public function testReturningSettingsFromFileWithInvalidFormat() {
+		Assert::exception(
+			function () {
+				(new Configuration\ParsedConfiguration(
+					__DIR__ . '/../TestCase/configuration.txt'
+				))->settings();
+			},
+			\UnexpectedValueException::class,
+			'Given file is not readable or does not have .ini extension'
+		);
+	}
+
+	public function testReturningSettingsFromNonexistentFile() {
+		Assert::exception(
+			function () {
+				(new Configuration\ParsedConfiguration(
+					'/nonexistent/path/to/ini/file'
 				))->settings();
 			},
 			\UnexpectedValueException::class,
