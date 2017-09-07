@@ -1,9 +1,10 @@
 {
-  "name": "dasuos/ini",
-  "description": "Library for .ini file manipulation",
+  "name": "dasuos/configuration",
+  "description": "Library for manipulation with configuration files",
   "type": "library",
-  "homepage": "https://github.com/Dasuos/Ini",
+  "homepage": "https://github.com/Dasuos/Configuration",
   "keywords": [
+    "configuration",
     "ini"
   ],
   "authors": [
