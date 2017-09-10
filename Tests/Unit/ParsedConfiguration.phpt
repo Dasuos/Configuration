@@ -11,7 +11,7 @@ use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';
 
-class ParsedConfiguration extends \Tester\TestCase {
+final class ParsedConfiguration extends \Tester\TestCase {
 
 	public function testReturningValidSettings() {
 		Assert::same(

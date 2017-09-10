@@ -11,7 +11,7 @@ use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';
 
-class CombinedConfiguration extends \Tester\TestCase {
+final class CombinedConfiguration extends \Tester\TestCase {
 
 	public function testReturningTwoCombinedSettings(): void {
 		Assert::same(
