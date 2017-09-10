@@ -27,8 +27,28 @@ class CombinedConfiguration extends \Tester\TestCase {
 				],
 			],
 			(new Configuration\CombinedConfiguration(
-				new Configuration\ParsedConfiguration(__DIR__ . '/../TestCase/configuration.ini'),
-				new Configuration\ParsedConfiguration(__DIR__ . '/../TestCase/configurationToMerge.ini')
+				new Configuration\FakeConfiguration(
+					[
+						'Example' => [
+							'example' => 'foo',
+							'example2' => 'bar',
+							'example3' => 12345,
+						],
+					]
+				),
+				new Configuration\FakeConfiguration(
+					[
+						'Example' => [
+							'example' => 'FOO',
+							'example2' => 'bar',
+							'example3' => 54321,
+						],
+						'Example2' => [
+							'example' => 'foo',
+							'example2' => 'bar',
+						],
+					]
+				)
 			))->settings()
 		);
 	}
@@ -47,8 +67,28 @@ class CombinedConfiguration extends \Tester\TestCase {
 				],
 			],
 			(new Configuration\CombinedConfiguration(
-				new Configuration\ParsedConfiguration(__DIR__ . '/../TestCase/configurationToMerge.ini'),
-				new Configuration\ParsedConfiguration(__DIR__ . '/../TestCase/configuration.ini')
+				new Configuration\FakeConfiguration(
+					[
+						'Example' => [
+							'example' => 'FOO',
+							'example2' => 'bar',
+							'example3' => 54321,
+						],
+						'Example2' => [
+							'example' => 'foo',
+							'example2' => 'bar',
+						],
+					]
+				),
+				new Configuration\FakeConfiguration(
+					[
+						'Example' => [
+							'example' => 'foo',
+							'example2' => 'bar',
+							'example3' => 12345,
+						],
+					]
+				)
 			))->settings()
 		);
 	}
@@ -67,9 +107,41 @@ class CombinedConfiguration extends \Tester\TestCase {
 				],
 			],
 			(new Configuration\CombinedConfiguration(
-				new Configuration\ParsedConfiguration(__DIR__ . '/../TestCase/configuration.ini'),
-				new Configuration\ParsedConfiguration(__DIR__ . '/../TestCase/configurationToMerge.ini'),
-				new Configuration\ParsedConfiguration(__DIR__ . '/../TestCase/configurationToMerge2.ini')
+				new Configuration\FakeConfiguration(
+					[
+						'Example' => [
+							'example' => 'foo',
+							'example2' => 'bar',
+							'example3' => 12345,
+						],
+					]
+				),
+				new Configuration\FakeConfiguration(
+					[
+						'Example' => [
+							'example' => 'FOO',
+							'example2' => 'bar',
+							'example3' => 54321,
+						],
+						'Example2' => [
+							'example' => 'foo',
+							'example2' => 'bar',
+						],
+					]
+				),
+				new Configuration\FakeConfiguration(
+					[
+						'Example' => [
+							'example' => 'FOO',
+							'example2' => 'BAR',
+							'example3' => 1000000,
+						],
+						'Example2' => [
+							'example' => 'FOO',
+							'example2' => true,
+						],
+					]
+				)
 			))->settings()
 		);
 	}
