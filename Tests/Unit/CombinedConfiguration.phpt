@@ -100,10 +100,11 @@ final class CombinedConfiguration extends \Tester\TestCase {
 					'example' => 'FOO',
 					'example2' => 'BAR',
 					'example3' => 1000000,
+					'example4' => true,
 				],
 				'Example2' => [
 					'example' => 'FOO',
-					'example2' => true,
+					'example2' => false,
 				],
 			],
 			(new Configuration\CombinedConfiguration(
@@ -135,10 +136,11 @@ final class CombinedConfiguration extends \Tester\TestCase {
 							'example' => 'FOO',
 							'example2' => 'BAR',
 							'example3' => 1000000,
+							'example4' => true,
 						],
 						'Example2' => [
 							'example' => 'FOO',
-							'example2' => true,
+							'example2' => false,
 						],
 					]
 				)
