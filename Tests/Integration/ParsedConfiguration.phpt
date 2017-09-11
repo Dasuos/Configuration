@@ -4,7 +4,7 @@ declare(strict_types = 1);
  * @testCase
  * @phpVersion > 7.1
  */
-namespace Dasuos\Configuration\Unit;
+namespace Dasuos\Configuration\Integration;
 
 use Dasuos\Configuration;
 use Tester\Assert;
@@ -40,7 +40,7 @@ final class ParsedConfiguration extends \Tester\TestCase {
 		);
 	}
 
-	public function testReturningSettingsFromFileWithInvalidFormat() {
+	public function testThrowingOnInvalidFormat() {
 		Assert::exception(
 			function () {
 				(new Configuration\ParsedConfiguration(
@@ -52,7 +52,7 @@ final class ParsedConfiguration extends \Tester\TestCase {
 		);
 	}
 
-	public function testReturningSettingsFromNonexistentFile() {
+	public function testThrowingOnUnknownFile() {
 		Assert::exception(
 			function () {
 				(new Configuration\ParsedConfiguration(
