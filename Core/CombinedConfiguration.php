@@ -11,9 +11,8 @@ final class CombinedConfiguration implements Configuration {
 	}
 
 	public function settings(): array {
-		return call_user_func_array(
-			'array_replace_recursive',
-			array_map(
+		return array_replace_recursive(
+			...array_map(
 				function(Configuration $configuration): array {
 					return $configuration->settings();
 				},
