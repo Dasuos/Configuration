@@ -28,7 +28,7 @@ final class ParsedConfiguration extends \Tester\TestCase {
 		);
 	}
 
-	public function testReturningSettingsFromCorruptedConfiguration() {
+	public function testThrowingOnCorruptedIniFile() {
 		Assert::exception(
 			function () {
 				(new Configuration\ParsedConfiguration(
