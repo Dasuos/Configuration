@@ -2,7 +2,7 @@
   "name": "dasuos/configuration",
   "description": "Library for manipulation with configuration files",
   "type": "library",
-  "homepage": "https://github.com/Dasuos/Configuration",
+  "homepage": "https://github.com/dasuos/configuration",
   "keywords": [
     "configuration",
     "ini"
@@ -11,7 +11,7 @@
     {
       "name": "Daniel Krnak",
       "email": "dasuos256@gmail.com",
-      "homepage": "https://www.github.com/Dasuos",
+      "homepage": "https://www.github.com/dasuos",
       "role": "Developer"
     }
   ],
