@@ -147,7 +147,6 @@ final class CombinedConfiguration extends \Tester\TestCase {
 			))->settings()
 		);
 	}
-
 }
 
 (new CombinedConfiguration())->run();
