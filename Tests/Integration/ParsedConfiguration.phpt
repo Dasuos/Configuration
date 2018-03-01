@@ -11,7 +11,7 @@ use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';
 
-final class ParsedIni extends \Tester\TestCase {
+final class ParsedConfiguration extends \Tester\TestCase {
 
 	public function testReturningValidSettings() {
 		Assert::same(
@@ -65,4 +65,4 @@ final class ParsedIni extends \Tester\TestCase {
 	}
 }
 
-(new ParsedIni())->run();
+(new ParsedConfiguration())->run();
