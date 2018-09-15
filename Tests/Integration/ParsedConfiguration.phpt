@@ -1,15 +1,17 @@
 <?php
 declare(strict_types = 1);
-/**
- * @testCase
- * @phpVersion > 7.1
- */
+
 namespace Dasuos\Configuration\Integration;
 
 use Dasuos\Configuration;
 use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';
+
+/**
+ * @testCase
+ * @phpVersion > 7.1
+ */
 
 final class ParsedConfiguration extends \Tester\TestCase {
 
@@ -23,7 +25,7 @@ final class ParsedConfiguration extends \Tester\TestCase {
 				],
 			],
 			(new Configuration\ParsedConfiguration(
-				__DIR__ . '/../TestCase/configuration.ini'
+				__DIR__ . '/../Fixtures/configuration.ini'
 			))->settings()
 		);
 	}
@@ -32,7 +34,7 @@ final class ParsedConfiguration extends \Tester\TestCase {
 		Assert::exception(
 			function () {
 				(new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/corruptedConfiguration.ini'
+					__DIR__ . '/../Fixtures/corruptedConfiguration.ini'
 				))->settings();
 			},
 			\UnexpectedValueException::class,
@@ -44,7 +46,7 @@ final class ParsedConfiguration extends \Tester\TestCase {
 		Assert::exception(
 			function () {
 				(new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configuration.txt'
+					__DIR__ . '/../Fixtures/configuration.txt'
 				))->settings();
 			},
 			\UnexpectedValueException::class,

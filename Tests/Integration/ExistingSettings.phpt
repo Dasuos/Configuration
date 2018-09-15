@@ -1,15 +1,17 @@
 <?php
 declare(strict_types = 1);
-/**
- * @testCase
- * @phpVersion > 7.1
- */
+
 namespace Dasuos\Configuration\Integration;
 
 use Dasuos\Configuration;
 use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';
+
+/**
+ * @testCase
+ * @phpVersion > 7.1
+ */
 
 final class ExistingSettings extends \Tester\TestCase {
 
@@ -18,7 +20,7 @@ final class ExistingSettings extends \Tester\TestCase {
 			'foo',
 			(new Configuration\ExistingSettings(
 				new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configuration.ini'
+					__DIR__ . '/../Fixtures/configuration.ini'
 				)
 			))->property('Example', 'example')
 		);
@@ -29,7 +31,7 @@ final class ExistingSettings extends \Tester\TestCase {
 			function() {
 				(new Configuration\ExistingSettings(
 					new Configuration\ParsedConfiguration(
-						__DIR__ . '/../TestCase/configuration.ini'
+						__DIR__ . '/../Fixtures/configuration.ini'
 					)
 				))->property('Invalid', 'example');
 			},
@@ -43,7 +45,7 @@ final class ExistingSettings extends \Tester\TestCase {
 			function() {
 				(new Configuration\ExistingSettings(
 					new Configuration\ParsedConfiguration(
-						__DIR__ . '/../TestCase/configuration.ini'
+						__DIR__ . '/../Fixtures/configuration.ini'
 					)
 				))->property('Example', 'example123');
 			},

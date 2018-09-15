@@ -1,15 +1,17 @@
 <?php
 declare(strict_types = 1);
-/**
- * @testCase
- * @phpVersion > 7.1
- */
+
 namespace Dasuos\Configuration\Integration;
 
 use Dasuos\Configuration;
 use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';
+
+/**
+ * @testCase
+ * @phpVersion > 7.1
+ */
 
 final class CombinedConfiguration extends \Tester\TestCase {
 
@@ -28,10 +30,10 @@ final class CombinedConfiguration extends \Tester\TestCase {
 			],
 			(new Configuration\CombinedConfiguration(
 				new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configuration.ini'
+					__DIR__ . '/../Fixtures/configuration.ini'
 				),
 				new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configurationToMerge.ini'
+					__DIR__ . '/../Fixtures/configurationToMerge.ini'
 				)
 			))->settings()
 		);
@@ -52,10 +54,10 @@ final class CombinedConfiguration extends \Tester\TestCase {
 			],
 			(new Configuration\CombinedConfiguration(
 				new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configurationToMerge.ini'
+					__DIR__ . '/../Fixtures/configurationToMerge.ini'
 				),
 				new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configuration.ini'
+					__DIR__ . '/../Fixtures/configuration.ini'
 				)
 			))->settings()
 		);
@@ -76,13 +78,13 @@ final class CombinedConfiguration extends \Tester\TestCase {
 			],
 			(new Configuration\CombinedConfiguration(
 				new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configuration.ini'
+					__DIR__ . '/../Fixtures/configuration.ini'
 				),
 				new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configurationToMerge.ini'
+					__DIR__ . '/../Fixtures/configurationToMerge.ini'
 				),
 				new Configuration\ParsedConfiguration(
-					__DIR__ . '/../TestCase/configurationToMerge2.ini'
+					__DIR__ . '/../Fixtures/configurationToMerge2.ini'
 				)
 			))->settings()
 		);
